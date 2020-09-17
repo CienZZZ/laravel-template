@@ -45,19 +45,19 @@
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 @switch($locale)
                                     @case('en')
-                                    <img src="{{asset('img/en.png')}}"> English
+                                    <img src="{{asset('img/en.png')}}"> {{ __('messages.lang_english')}}
                                     @break
                                     @case('pl')
-                                    <img src="{{asset('img/pl.png')}}"> Polish
+                                    <img src="{{asset('img/pl.png')}}"> {{ __('messages.lang_polish')}}
                                     @break
                                     @default
-                                    <img src="{{asset('img/en.png')}}"> English
+                                    <img src="{{asset('img/en.png')}}"> {{ __('messages.lang_english')}}
                                 @endswitch
                                 <span class="caret"></span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="lang/en"><img src="{{asset('img/en.png')}}"> English</a>
-                                <a class="dropdown-item" href="lang/pl"><img src="{{asset('img/pl.png')}}"> Polish</a>
+                                <a class="dropdown-item" href="lang/en"><img src="{{asset('img/en.png')}}"> {{ __('messages.lang_english')}}</a>
+                                <a class="dropdown-item" href="lang/pl"><img src="{{asset('img/pl.png')}}"> {{ __('messages.lang_polish')}}</a>
                             </div>
                         </li>
 
