@@ -70,9 +70,4 @@ class RegisterController extends Controller
         ]);
     }
 
-    // public function redirectTo()
-    // {
-    //     return app()->getLocale() . '/home';
-    // }
-
 }

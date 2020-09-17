@@ -62,14 +62,6 @@
                         </li>
 
                         <!-- Authentication Links -->
-                        {{-- @foreach (config('app.available_locales') as $locale)
-                        <li class="nav-item">
-                            <a class="nav-link"
-                                href="{{ route(\Illuminate\Support\Facades\Route::currentRouteName(),$locale) }}"
-                                @if (app()->getLocale() == $locale) style="font-weight: bold; text-decoration: underline"
-                                @endif>{{ strtoupper($locale) }}</a>
-                        </li>
-                        @endforeach --}}
 
                         @guest
                         <li class="nav-item">
@@ -106,7 +98,7 @@
             </div>
         </nav>
     </header>
-    <main class="container">
+    <main>
         @yield('content')
     </main>
     <footer>
