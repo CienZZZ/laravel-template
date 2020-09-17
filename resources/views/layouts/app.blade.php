@@ -7,6 +7,7 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name') }} - @yield('title')</title>
 
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -36,15 +37,39 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
 
+
+                        @php $locale = session()->get('locale'); @endphp
+
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                @switch($locale)
+                                    @case('en')
+                                    <img src="{{asset('img/en.png')}}"> English
+                                    @break
+                                    @case('pl')
+                                    <img src="{{asset('img/pl.png')}}"> Polish
+                                    @break
+                                    @default
+                                    <img src="{{asset('img/en.png')}}"> English
+                                @endswitch
+                                <span class="caret"></span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="lang/en"><img src="{{asset('img/en.png')}}"> English</a>
+                                <a class="dropdown-item" href="lang/pl"><img src="{{asset('img/pl.png')}}"> Polish</a>
+                            </div>
+                        </li>
+
                         <!-- Authentication Links -->
-                        @foreach (config('app.available_locales') as $locale)
+                        {{-- @foreach (config('app.available_locales') as $locale)
                         <li class="nav-item">
                             <a class="nav-link"
                                 href="{{ route(\Illuminate\Support\Facades\Route::currentRouteName(),$locale) }}"
                                 @if (app()->getLocale() == $locale) style="font-weight: bold; text-decoration: underline"
                                 @endif>{{ strtoupper($locale) }}</a>
                         </li>
-                        @endforeach
+                        @endforeach --}}
 
                         @guest
                         <li class="nav-item">

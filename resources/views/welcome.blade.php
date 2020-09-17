@@ -7,7 +7,7 @@
         <div class="row">
             <h1>Welcome on our page!</h1>
         </div>
-        <div class="row">
+        {{-- <div class="row">
             @if (Route::has('login'))
             <div class="top-right links">
                 @auth
@@ -21,6 +21,7 @@
                 @endauth
             </div>
             @endif
-        </div>
+        </div> --}}
+        <p>{{ __('messages.locale_test')}}</p>
     </div>
 @endsection
